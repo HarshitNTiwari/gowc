@@ -28,10 +28,6 @@ func main() {
 	for fileIdx := 0; fileIdx < len(filenames); fileIdx++ {
 		fileContent, _ := fileutils.ReadTextFile(string(filenames[fileIdx]))
 
-		if bytesVar {
-			charCount := countutils.CountBytes(fileContent)
-			fmt.Print(charCount, " ")
-		}
 		if linesVar {
 			lineCount := countutils.CountLines(fileContent)
 			fmt.Print(lineCount, " ")
@@ -40,6 +36,11 @@ func main() {
 		if wordsVar {
 			wordCount := countutils.CountWords(fileContent)
 			fmt.Print(wordCount, " ")
+		}
+
+		if bytesVar {
+			charCount := countutils.CountBytes(fileContent)
+			fmt.Print(charCount, " ")
 		}
 
 		fmt.Println(filenames[fileIdx])
