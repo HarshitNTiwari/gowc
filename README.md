@@ -13,13 +13,13 @@ This is a Go implementation to mimic the Unix's wc utility that dislays the numb
 
 2. Following is the Synopsis for the tool:
 
-```cmd
+```shell
 gowc [-options] [file ...]
 ```
 
 3. Following are the options that can be used as flags:
 
-```cmd
+```shell
 -c     Count the number of bytes in the input file
 -l     Count the number of new line characters in the input file
 -w     Count the number of words in the input file
@@ -29,8 +29,8 @@ The default values of these flags is `false`.
 
 4. Here is an example to get the number of words in the input text file:
 
-```cmd
-go run ./gowc.go -w file.txt
+```shell
+% go run ./gowc.go -w file.txt
 ```
 
 5. When using multiple flags together, the order of output will be: lines, words, bytes and file name.
