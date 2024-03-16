@@ -11,7 +11,7 @@ This is a Go implementation to mimic the Unix's wc utility that dislays the numb
 
 1. Clone the repo and put the input text files in the root folder.
 
-2. Following is the Synopsis for the tool:
+2. Following is the Synopsis for the tool, that you'll run on your terminal:
 
 ```shell
 gowc [-options] [file ...]
@@ -26,6 +26,8 @@ gowc [-options] [file ...]
 ```
 
 The default values of these flags is `false`.
+
+You can also use the `-help` flag to see these help messages on your terminal.
 
 4. Here is an example to get the number of words in the input text file:
 
