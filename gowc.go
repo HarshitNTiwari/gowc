@@ -15,19 +15,34 @@ func main() {
 		charVar  bool
 	)
 
-	flag.BoolVar(&bytesVar, "c", true, "count no. of bytes in the file")
-	flag.BoolVar(&linesVar, "l", true, "count no. of lines in the file")
-	flag.BoolVar(&wordsVar, "w", true, "count no. of words in the file")
-	flag.BoolVar(&charVar, "m", true, "count no. of chars in the file")
+	flag.BoolVar(&bytesVar, "c", false, "count no. of bytes in the file")
+	flag.BoolVar(&linesVar, "l", false, "count no. of lines in the file")
+	flag.BoolVar(&wordsVar, "w", false, "count no. of words in the file")
+	flag.BoolVar(&charVar, "m", false, "count no. of chars in the file")
 	flag.Parse()
 
-	// fmt.Println(bytesVar)
-	// fmt.Println(linesVar)
+	filenames := flag.Args()
 
-	fileContent, _ := fileutils.ReadTextFile("data/test.txt")
-	charCount := countutils.CountChars(fileContent)
-	fmt.Println(charCount)
-	wordCount := countutils.CountWords(fileContent)
-	fmt.Println(wordCount)
+	fmt.Println(filenames)
+
+	for filePtr := 0; filePtr < len(filenames); filePtr++ {
+		fileContent, _ := fileutils.ReadTextFile(string(filenames[filePtr]))
+
+		if bytesVar {
+			charCount := countutils.CountBytes(fileContent)
+			fmt.Print(charCount, " ")
+		}
+		if linesVar {
+			lineCount := countutils.CountLines(fileContent)
+			fmt.Print(lineCount, " ")
+		}
+
+		if wordsVar {
+			wordCount := countutils.CountWords(fileContent)
+			fmt.Print(wordCount, " ")
+		}
+
+		fmt.Println(filenames[filePtr])
+	}
 
 }

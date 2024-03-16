@@ -1,6 +1,6 @@
 package countutils
 
-func CountChars(fileContent string) int {
+func CountBytes(fileContent string) int {
 	fileBytes := []byte(fileContent)
 	return len(fileBytes)
 }
