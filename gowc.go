@@ -23,8 +23,6 @@ func main() {
 
 	filenames := flag.Args()
 
-	fmt.Println(filenames)
-
 	for fileIdx := 0; fileIdx < len(filenames); fileIdx++ {
 		fileContent, _ := fileutils.ReadTextFile(string(filenames[fileIdx]))
 
